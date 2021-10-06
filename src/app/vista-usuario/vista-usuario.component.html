@@ -1,0 +1,54 @@
+<div class="row p-3">
+  <div class="col">
+    Bienvenido!
+    <span>{{usuarioSrv.usuario.nombre_completo}}</span>
+
+  </div>
+
+  <div class="row">
+    <div class="col">
+      Tu saldo Actual es de ${{saldo}}
+    </div>
+  </div>
+</div>
+
+<div class="row mt-3 text-center p-4">
+  <div class="col">
+    <button class="btn btn-primary " [routerLink]="['/transferencias']">Realizar Transferencia</button>
+  </div>
+</div>
+
+<h2>Historial de Transferencias</h2>
+<div class="container card-body mt-5">
+  <div class="row">
+    <div class="col">
+     <table class="table">
+       <thead class="thead-dark">
+         <tr>
+           <th scope="col">id</th>
+           <th scope="col">Monto anterior</th>
+           <th scope="col">Monto despues</th>
+           <th scope="col">Monto Transferido</th>
+           <th scope="col">Cuenta Origen</th>
+           <th scope="col">Cuenta Destino</th>
+
+           <th scope="col">Tipo de Credito</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr *ngFor="let transferencia of transferencias">
+           <td>{{transferencia._id}}</td>
+           <td>{{transferencia.monto_anterior}}</td>
+           <td>{{transferencia.monto_despues}}</td>
+           <td>{{transferencia.monto_transferido}}</td>
+           <td>{{transferencia.cuenta_origen}}</td>
+           <td>{{transferencia.cuenta_destino}}</td>
+           <td>{{transferencia.tipoCredito}}</td>
+         </tr>
+
+       </tbody>
+     </table>
+
+    </div>
+  </div>
+</div>

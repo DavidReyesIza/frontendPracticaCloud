@@ -1,0 +1,59 @@
+<div>
+  <h1 class="text-center mt-3">Transferencias</h1>
+</div>
+
+
+
+
+<form  [formGroup]="form" class="mt-5">
+
+  <div class="form-group row p-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Cuenta origen</label>
+    <div class="col-sm-10">
+      <input [readOnly] = "true" type="text" formControlName="cuenta_origen" class="form-control" id="inputEmail3" placeholder="Cuenta Origen">
+    </div>
+  </div>
+
+  <div class="form-group row p-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Cuenta Destino</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" formControlName="cuenta_destino" id="inputEmail3" placeholder="Cuenta destino">
+    </div>
+  </div>
+
+  <div class="form-group row p-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Monto</label>
+    <div class="col-sm-10">
+      <input type="number" formControlName="monto_transferido" class="form-control" id="inputEmail3" placeholder="Monto a transferir">
+    </div>
+  </div>
+
+
+  <div class="form-group row p-3">
+    <label for="inputEmail3" class="col-sm-4 col-form-label">Selecciona el tipo de credito</label>
+    <select formControlName="tipoCredito"  class=" " aria-label="Default select example">
+      <option value="Credito">Credito</option>
+      <option value="Debito">Debito</option>
+    </select>
+  </div>
+
+  <div class="form-group row p-3">
+
+</div>
+
+<div *ngIf="!form.valid" class="alert alert-warning" role="alert">
+  Hay campos vacios
+</div>
+
+
+
+  <div class="form-group row text-center">
+    <div class="col-sm-10 mt-3">
+      <button [disabled]="!form.valid" (click)="transferir()" type="submit" class="btn btn-primary">Transferir</button>
+    </div>
+  </div>
+</form>
+
+
+
+<pre> {{ form.value | json }} </pre>
