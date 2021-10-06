@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from './../environments/environment';
 import { map } from 'rxjs/operators';
 import { HandleError } from './common/handle-error';
-import { catchError } from 'rxjs/operators';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,7 +17,7 @@ export class UsuarioService {
 
   constructor(
     private http: HttpClient,
-    private handleError: HandleError
+  
   ) { }
 
     get headers(){
@@ -55,8 +55,7 @@ export class UsuarioService {
   }
 
   transferir(data){
-    return this.http.post(this.urlBase+'/Transferir',data,this.headers).pipe(
-      catchError(this.handleError.handleError<any>('getTransferir'));
+    return this.http.post(this.urlBase+'/Transferir',data,this.headers)
 
   }
 
