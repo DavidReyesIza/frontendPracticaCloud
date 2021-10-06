@@ -15,8 +15,9 @@
          <tr>
            <th scope="col">id</th>
            <th scope="col">Monto anterior</th>
-           <th scope="col">Monto despues</th>
+           
            <th scope="col">Monto Transferido</th>
+           <th scope="col">Monto despues</th>
            <th scope="col">Cuenta Origen</th>
            <th scope="col">Cuenta Destino</th>
 
@@ -27,8 +28,9 @@
          <tr *ngFor="let transferencia of transferencias">
            <td>{{transferencia._id}}</td>
            <td>{{transferencia.monto_anterior}}</td>
-           <td>{{transferencia.monto_despues}}</td>
            <td>{{transferencia.monto_transferido}}</td>
+           <td>{{transferencia.monto_despues}}</td>
+         
            <td>{{transferencia.cuenta_origen}}</td>
            <td>{{transferencia.cuenta_destino}}</td>
            <td>{{transferencia.tipoCredito}}</td>

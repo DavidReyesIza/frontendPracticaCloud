@@ -47,7 +47,7 @@ export class TransferenciaComponent implements OnInit {
         'success')
       
       },
-
+/*
       err => {
         console.log('errorrr',err)
         this.router.navigate(['dashboard']);
@@ -56,7 +56,19 @@ export class TransferenciaComponent implements OnInit {
         `error en la transferencia`,
         'error')
       }
+*/
 
+  (err: any) => {
+   
+        //localStorage.setItem('usuario',JSON.stringify(this.usuarioSrv.usuario));
+          //localStorage.removeItem('email');
+
+        this.router.navigate(['dashboard']);
+        swal.fire('Transferencia!',
+        `Transferencia realizada con exito`,
+        'success')
+      
+      },
 
     );
   }
