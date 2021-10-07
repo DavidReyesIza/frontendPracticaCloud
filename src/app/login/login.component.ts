@@ -55,6 +55,14 @@ export class LoginComponent implements OnInit {
         swal.fire('Inicio de sesion!',
         `Bienvenido ${this.usuarioSrv.usuario.nombre_completo}`,
         'success')
+
+        setTimeout(() => {
+          this.router.navigate(['']);
+           swal.fire('Se acabo el tiempo!',
+        `Solo puedes estar logeado por 2 minutos`,
+        'error')
+         
+        }, 120000);
       }
       },
 

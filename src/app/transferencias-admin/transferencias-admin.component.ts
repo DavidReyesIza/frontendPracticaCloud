@@ -9,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TransferenciasAdminComponent implements OnInit {
 
+ public idCuentaUsuario;
+
   transferencias
   constructor(public usuarioSrv : UsuarioService,
     private activatedRoute: ActivatedRoute) { }
@@ -21,6 +23,7 @@ export class TransferenciasAdminComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
 
       let id = params['id'];
+      this.idCuentaUsuario = id;
 
       if(id){
         const data = {

@@ -33,7 +33,7 @@
            <th scope="col">Cuenta Origen</th>
            <th scope="col">Cuenta Destino</th>
 
-           <th scope="col">Tipo de Credito</th>
+           <th scope="col">Tipo de Accion</th>
          </tr>
        </thead>
        <tbody>
@@ -44,7 +44,8 @@
            <td>{{transferencia.monto_transferido}}</td>
            <td>{{transferencia.cuenta_origen}}</td>
            <td>{{transferencia.cuenta_destino}}</td>
-           <td>{{transferencia.tipoCredito}}</td>
+           <td *ngIf="usuarioSrv.usuario._id == transferencia.cuenta_origen">Debito</td>
+           <td *ngIf="usuarioSrv.usuario._id == transferencia.cuenta_destino">Credito</td>
          </tr>
 
        </tbody>
