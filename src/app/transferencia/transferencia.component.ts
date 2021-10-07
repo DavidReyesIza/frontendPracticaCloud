@@ -20,7 +20,7 @@ export class TransferenciaComponent implements OnInit {
          monto_transferido: ['',[Validators.required]],
          cuenta_destino: ['', [Validators.required]],
          cuenta_origen: [usuarioSrv.usuario._id],
-         tipoCredito: ['', [Validators.required]],
+
 
 
        });
@@ -35,40 +35,38 @@ export class TransferenciaComponent implements OnInit {
 
 
       (resp: any) => {
-        console.log("respuesta transferir",resp)
-      
 
-        //localStorage.setItem('usuario',JSON.stringify(this.usuarioSrv.usuario));
-          //localStorage.removeItem('email');
+        console.log("respuesta resp",resp)
+
+
 
         this.router.navigate(['dashboard']);
         swal.fire('Transferencia!',
         `Transferencia realizada con exito`,
         'success')
-      
-      },
-/*
-      err => {
-        console.log('errorrr',err)
-        this.router.navigate(['dashboard']);
 
+
+
+      },
+
+      err => {
+
+        if(err.status == 200){
+
+        this.router.navigate(['dashboard']);
+        swal.fire('Transferencia!',
+        `Transferencia realizada con exito`,
+        'success')
+        return
+        }
+        console.log("mensaje de error",err)
+
+        console.log("respuesta resp",err.error.respuesta)
         swal.fire('Error',
-        `error en la transferencia`,
+        `Error en la transacción : ${err.error.respuesta}`,
         'error')
       }
-*/
 
-  (err: any) => {
-   
-        //localStorage.setItem('usuario',JSON.stringify(this.usuarioSrv.usuario));
-          //localStorage.removeItem('email');
-
-        this.router.navigate(['dashboard']);
-        swal.fire('Transferencia!',
-        `Transferencia realizada con exito`,
-        'success')
-      
-      },
 
     );
   }

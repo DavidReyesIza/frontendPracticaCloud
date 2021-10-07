@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { transferencia } from './../models/transferencia';
 import { UsuarioService } from './../usuario.service';
 import { Component, OnInit } from '@angular/core';
@@ -16,7 +17,8 @@ export class VistaUsuarioComponent implements OnInit {
 
 
 
-  constructor(public usuarioSrv: UsuarioService) {
+  constructor(public usuarioSrv: UsuarioService,
+    private router: Router) {
 
    }
 
@@ -34,6 +36,10 @@ export class VistaUsuarioComponent implements OnInit {
       console.log('Respuesta saldo',resp)
       this.saldo = resp.saldo;
     })
+  }
+
+  cerrarSesion(){
+    this.router.navigate(['']);
   }
 
   getTransferencias(){

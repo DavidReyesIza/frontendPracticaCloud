@@ -3,12 +3,18 @@
     Bienvenido!
     <span class="nombre">{{usuarioSrv.usuario.nombre_completo}}</span>
 
+
+
   </div>
 
+
   <div class="row">
-    <div class="col">
-      Tu saldo Actual es de 
+    <div class="col-12">
+      Tu saldo Actual es de
       <span class="nombre"> ${{saldo}}</span>
+    </div>
+    <div class="col-12">
+      <button (click)="cerrarSesion()" class="btn btn-danger">Cerrar Sesion</button>
     </div>
   </div>
 </div>

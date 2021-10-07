@@ -61,7 +61,7 @@ export class LoginComponent implements OnInit {
            swal.fire('Se acabo el tiempo!',
         `Solo puedes estar logeado por 2 minutos`,
         'error')
-         
+
         }, 120000);
       }
       },
