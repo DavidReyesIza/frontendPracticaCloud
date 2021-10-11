@@ -1,8 +1,17 @@
 .titulo{
-    font-size: 20px; 
-    
-    
+    font-size: 20px;
+
+
 }
 .nombre {
     color: blue
+}
+/* You can add global styles to this file, and also import other style files */
+.test{
+  background-image: url("/src/assets/images/mainBackGround.jpg");
+
+}
+
+.cerrar{
+  margin-left: 80%;
 }

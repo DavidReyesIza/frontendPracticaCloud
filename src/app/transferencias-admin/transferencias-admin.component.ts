@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class TransferenciasAdminComponent implements OnInit {
 
  public idCuentaUsuario;
+ loading = false;
 
   transferencias
   constructor(public usuarioSrv : UsuarioService,
@@ -43,6 +44,7 @@ export class TransferenciasAdminComponent implements OnInit {
 
       console.log(resp);
       this.transferencias = resp
+      this.loading = true;
     })
   }
 

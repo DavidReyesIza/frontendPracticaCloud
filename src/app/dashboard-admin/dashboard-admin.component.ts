@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardAdminComponent implements OnInit {
   usuarios
+  loading = false;
 
   constructor(public usuarioSrv: UsuarioService) { }
 
@@ -18,6 +19,7 @@ export class DashboardAdminComponent implements OnInit {
   getAllAccounts(){
     this.usuarioSrv.getAllAccounts().subscribe(resp => {
       this.usuarios = resp;
+      this.loading = true;
     })
   }
 

@@ -11,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class VistaUsuarioComponent implements OnInit {
 
   saldo;
+  loading = false;
 
   nombreCompleto:String;
   transferencias: transferencia[];
@@ -43,6 +44,7 @@ export class VistaUsuarioComponent implements OnInit {
   }
 
   getTransferencias(){
+    this.loading = true;
 
     const data = {
 

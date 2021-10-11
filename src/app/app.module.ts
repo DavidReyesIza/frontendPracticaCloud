@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { TransferenciaComponent } from './transferencia/transferencia.component';
 import { DashboardAdminComponent } from './dashboard-admin/dashboard-admin.component';
 import { TransferenciasAdminComponent } from './transferencias-admin/transferencias-admin.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TransferenciasAdminComponent } from './transferencias-admin/transferenc
     LoginComponent,
     TransferenciaComponent,
     DashboardAdminComponent,
-    TransferenciasAdminComponent
+    TransferenciasAdminComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
