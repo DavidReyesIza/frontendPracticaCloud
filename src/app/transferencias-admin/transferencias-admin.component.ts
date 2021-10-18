@@ -12,12 +12,15 @@ export class TransferenciasAdminComponent implements OnInit {
  public idCuentaUsuario;
  loading = false;
 
+ usuario
+
   transferencias
   constructor(public usuarioSrv : UsuarioService,
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.cargar();
+    this.getUsuario();
   }
 
   cargar() : void {
@@ -45,6 +48,17 @@ export class TransferenciasAdminComponent implements OnInit {
       console.log(resp);
       this.transferencias = resp
       this.loading = true;
+    })
+  }
+
+  getUsuario(){
+     const data = {
+      id: this.idCuentaUsuario,
+      rol: 'admin'
+    }
+    this.usuarioSrv.getUsuarioAdminPanel(data).subscribe((resp : any) => {
+
+      this.usuario = resp.nombre_completo;
     })
   }
 

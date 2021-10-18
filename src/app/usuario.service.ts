@@ -17,14 +17,14 @@ export class UsuarioService {
 
   constructor(
     private http: HttpClient,
-  
+
   ) { }
 
     get headers(){
 
     return{
       headers:{
-        'Ocp-Apim-Subscription-Key': 'be5715c0aa3d45cb9745f772b0609b69',
+        'Ocp-Apim-Subscription-Key': '3216f271f2ab4221bd4d7dd8569184c2',
         'Ocp-Apim-Trace':'true'
       }
 
@@ -48,6 +48,10 @@ export class UsuarioService {
 
   getSaldo(data){
    return this.http.post(this.urlBase+'/getSaldo',data,this.headers);
+  }
+
+  getUsuarioAdminPanel(data){
+    return this.http.post(this.urlBase+'/getAccount' ,data,this.headers)
   }
 
   getTransferencias(data){

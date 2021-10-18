@@ -4,8 +4,8 @@
 
 export const environment = {
   production: true,
-  //base_url: 'http://localhost:7071/api'
-  base_url: 'ehttps://functionappclouddavid-apimnube.azure-api.net/functionAppCloudDavid'
+ // base_url: 'http://localhost:7071/api'
+  base_url: 'https://functionappclouddavid-apimnube.azure-api.net/functionAppCloudDavid'
 };
 
 

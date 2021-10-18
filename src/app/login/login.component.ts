@@ -11,6 +11,7 @@ import swal from 'sweetalert2';
 })
 export class LoginComponent implements OnInit {
   form: FormGroup;
+  loading = true;
 
   constructor(private fb: FormBuilder,
     private activatedRoute: ActivatedRoute,
@@ -30,11 +31,13 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
+    this.loading = false;
 
     this.usuarioSrv.getUsuario(this.form.value).subscribe(
 
 
       (resp: any) => {
+        this.loading = true;
         console.log("respuest",resp)
       if(resp.status = 200){
 
@@ -67,6 +70,7 @@ export class LoginComponent implements OnInit {
       },
 
       err => {
+        this.loading = true;
 
         swal.fire('Error',
         `Usuario o contraseña Incorrectos`,

@@ -11,6 +11,7 @@ import swal from 'sweetalert2';
 })
 export class TransferenciaComponent implements OnInit {
   form: FormGroup;
+  public loading = false;
   constructor(private fb: FormBuilder,
     private activatedRoute: ActivatedRoute,
     private usuarioSrv: UsuarioService,
@@ -30,11 +31,13 @@ export class TransferenciaComponent implements OnInit {
   }
 
   transferir(){
+    this.loading = true;
 
     this.usuarioSrv.transferir(this.form.value).subscribe(
 
 
       (resp: any) => {
+        this.loading = false;
 
         console.log("respuesta resp",resp)
 
@@ -50,6 +53,7 @@ export class TransferenciaComponent implements OnInit {
       },
 
       err => {
+        this.loading = false;
 
         if(err.status == 200){
 
